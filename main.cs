@@ -10,7 +10,25 @@ Alex Olhovskiy
 using System;
 class HelloWorld {
   static void Main() {
-    ResultOutput(UserInput());
+      
+    string[]arr=UserInput();
+    ResultOutput(arr);
+    Console.WriteLine();
+    Console.WriteLine(CountCalculation(arr));
+  }
+  
+  
+  public static int CountCalculation(string[]arr)
+  {
+      int count=0;
+      for(int i=0;i<arr.Length;i++)
+      {
+          if(arr[i].Length<=3)
+          {
+              count++;
+          }
+      }
+      return count;
   }
   
   public static string[]UserInput()
