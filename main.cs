@@ -10,13 +10,29 @@ Alex Olhovskiy
 using System;
 class HelloWorld {
   static void Main() {
-      
-    string[]arr=UserInput();
-    ResultOutput(arr);
+    string[]str_arr=UserInput();
+    ResultOutput(str_arr);
+    string[]sub_str_arr=GetSubstringsArr(str_arr,CountCalculation(str_arr));
     Console.WriteLine();
-    Console.WriteLine(CountCalculation(arr));
+    Console.WriteLine();
+    Console.WriteLine("Result arr:");
+    ResultOutput(sub_str_arr);
   }
   
+  public static string[]GetSubstringsArr(string[]arr,int count)
+  {
+      int n=0;
+      string[]sub_arr=new string[count];
+      for(int i=0;i<arr.Length;i++)
+      {
+          if(arr[i].Length<=3)
+          {
+              sub_arr[n]=arr[i];
+              n++;
+          }
+      }
+      return sub_arr;
+  }
   
   public static int CountCalculation(string[]arr)
   {
